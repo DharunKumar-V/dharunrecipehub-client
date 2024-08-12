@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | RecipeHub</title>
+    <link rel="icon" type="image/png" href="image/logo.png" >
+    <style>
+        body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.contact-info {
+    max-width: 400px;
+}
+
+.contact-info h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-info .social-links {
+    margin-top: 20px;
+}
+
+.contact-info .social-links a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 15px;
+    font-size: 1.5em;
+}
+
+.contact-info .social-links a:hover {
+    color: #ff6600;
+}
+
+.contact-form h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form button {
+    padding: 15px;
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #cc5200;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-info, .contact-form {
+        max-width: none;
+        margin: 10px 0;
+    }
+
+    .contact-info h2, .contact-form h2 {
+        font-size: 1.8em;
+    }
+
+    .contact-info p {
+        font-size: 1em;
+    }
+
+    .contact-info .social-links a {
+        font-size: 1.2em;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 0.9em;
+    }
+
+    .contact-form button {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info h2, .contact-form h2 {
+        font-size: 1.5em;
+    }
+
+    .contact-info p {
+        font-size: 0.9em;
+    }
+
+    .contact-info .social-links a {
+        font-size: 1em;
+    }
+
+    .contact-form input, .contact-form textarea {
+        font-size: 0.9em;
+    }
+
+    .contactForm button {
+        font-size: 0.9em;
+    }
+    
+}
+#contactForm :hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or comments, feel free to reach out to us. We’d love to hear from you!</p>
+            <p><strong>Email:</strong> recipehub2427@gmail.com</p>
+            <p><strong>Phone:</strong> +(91) 9042443040</p>
+            <p><strong>Address:</strong> 61 Santhai Road, Thoothukudi, Pin 628002</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" title="Follow us on Facebook">Facebook</a>
+                <a href="https://x.com/HarishSrin33923?t=HFCIPlxHYVZ0mWjyDmN0sg&s=09" target="_blank" title="Follow us on Twitter">Twitter</a>
+                <a href="https://www.instagram.com/recipehub10?igsh=YmR1djBiNjZzMjZ4" target="_blank" title="Follow us on Instagram">Instagram</a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contactForm');
+
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                    const response = await fetch('http://localhost:5000/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    if (response.ok) {
+                        alert('Message sent successfully!');
+                        contactForm.reset();
+                    } else {
+                        alert('Error sending message!');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error sending message!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

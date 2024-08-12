@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="icon" type="image/png" href="image/logo.png" >
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+    <div class="container">
+    <div id="recipes"></div>
+     </div>
+    <script>
+        function displayRecipes(recipes) {
+            const recipesContainer = document.getElementById('recipes');
+            recipesContainer.innerHTML = ''; // Clear previous results
+
+            if (recipes.length === 0) {
+                recipesContainer.innerHTML = 'No recipes found.';
+                return;
+            }
+
+            recipes.forEach(recipe => {
+                const recipeElement = document.createElement('div');
+                recipeElement.className = 'recipe';
+                
+                recipeElement.innerHTML = `
+                    <img src="${recipe.image}" alt="${recipe.label}">
+                    <h3>${recipe.label}</h3>
+                    <p><strong>Ingredients:</strong> ${recipe.ingredientLines.join(', ')}</p>
+                    <p class="instructions"><strong>For Instructions Click Below</strong></p>
+                     <a href="${recipe.url}" target="_blank">View Here</a>
+                `;
+                
+                recipesContainer.appendChild(recipeElement);
+            });
+        }
+
+        // Retrieve recipes from sessionStorage
+        const recipesData = sessionStorage.getItem('recipes');
+        
+        if (recipesData) {
+            const recipes = JSON.parse(recipesData);
+            displayRecipes(recipes);
+            // Clear the storage after retrieving data to avoid stale data
+            sessionStorage.removeItem('recipes');
+        } else {
+            document.getElementById('recipes').innerHTML = 'No recipes found.';
+        }
+    </script>
+</body>
+</html>
+

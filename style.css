@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: aliceblue;
+  
+
+}
+header
+{  
+    width: 100%;
+    height:60px ;
+    background-color:black ;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    
+
+    
+}
+
+.head{
+    width: 90%;
+    margin:0 auto ;
+    display: flex;
+    align-items: center;
+    
+    
+    
+
+}
+
+.logo {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+    margin-right: 5px; /* Space between logo and text */
+}
+
+#logo{
+    font-size:50px ;
+    font-style: oblique;
+     font-weight: 600;
+     margin-left: 10px;
+     color: #ece344;
+}
+.nav-list{
+    display: none;
+}
+nav ul li{
+    list-style: none;
+    display: inline;
+    margin-right: 13px;
+    font-size:larger ;
+    justify-content: end;
+
+    
+}
+nav ul li a{
+    color: aliceblue;
+    text-decoration: none;
+}
+nav ul li:hover {
+    text-decoration: underline; /* Add hover effect */
+    background-color: red;
+}
+
+
+.content {
+    width: 100%;
+    height: auto;
+    background-image: url('image/pngtree-asian-food-background-with-various-ingredients-on-rustic-stone-image_15700117.jpg');
+    color:#ece344;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    text-align: center;
+    font-size: xx-large;
+    padding-top: 150px;
+    padding-left: 0;
+    padding-right: 0;
+    background-attachment: fixed; 
+    margin-bottom: 20px;
+}
+
+
+.search {
+    max-width: 550px;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10%;
+   
+}
+
+.search input{
+    width: 70%;
+    padding: 10px ;
+    border-radius: 20px 0 0 20px;
+    font-size: medium;
+    border: 1px solid black ;
+    outline: none;
+}
+.search button{
+    border: 1px solid black ;
+    width: 20%;
+    padding: 10px ;
+    border-radius: 0 20px 20px 0;
+    font-size: medium;
+    background-color:rgb(253, 206, 145) ;
+    color: black;
+    cursor: pointer;
+}
+.content h1{
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 80px;
+
+
+}
+   
+.content p{
+    margin-bottom:20px;
+    font-weight: 300;
+    font-size: 45px;
+    color: rgb(196, 233, 246);
+}
+
+
+
+.recipes{
+    padding: 30px 0;
+}
+.recipes h1{
+       text-align: center;
+       margin-bottom: 30px;
+       font-size: 40px;
+
+}
+
+.recipe-section{
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    column-gap: 10px;
+
+}
+
+.recipe-card{
+         background-color: rgb(255, 249, 242);
+         margin:30px 10px ;
+         border-radius: 10px;
+         border: 1px solid black;
+         overflow: hidden;
+         box-shadow: 0 2px 4px black;
+         overflow: hidden;
+         padding: 16px;
+         margin: 8px;
+         justify-content: space-between;
+         
+
+
+}
+
+.recipe-card img{
+
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius:10px ;
+
+}
+.recipe-card h2{
+      font-size: 24px;
+      padding: 20px;
+}
+
+.recipe-card p{
+    font-style: italic;
+    font-size: 20px;
+    padding: 20px;
+
+}
+
+.recipe-card a{
+    height: 40px;
+    display: block;
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    padding:10px;
+    cursor: pointer;
+    border-radius: 10px;
+    
+}
+
+footer{
+    background:black;
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+
+}
+
+.menu{
+    font-size: 25px;
+    padding: 20px;
+    text-align: right;
+    cursor: pointer;
+    display: block;
+}
+.recipe-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+footer {
+    background-color:black;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    
+}
+.footer-links {
+    margin-top: 10px;
+}
+.footer-links a {
+    display: inline-block;
+    margin: 0 10px;
+}
+.footer-links img {
+    width: 30px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+    border-radius:10px;
+}
+.footer-links a:hover img {
+    opacity: 0.7; /* Optional: add hover effect */
+}
+@media only screen and (min-width:768px){
+    .menu{
+        display: none;
+    }
+    .nav-list{
+        display: block;
+    }
+
+}

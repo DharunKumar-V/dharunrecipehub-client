@@ -1,0 +1,101 @@
+/* Basic reset */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgb(255,79,142);
+background: radial-gradient(circle, rgba(255,79,142,1) 0%, rgba(249,83,72,1) 100%);
+    color: #333;
+}
+
+/* Center the content and add a max width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Flex container for recipes */
+#recipes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Space between recipe items */
+    justify-content: center; /* Center align items horizontally */
+    padding: 16px;
+}
+
+/* Styling for each recipe item */
+.recipe {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(33.333% - 32px); /* Responsive width for 3 items per row (subtracting gap) */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: antiquewhite;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative; /* For potential positioning adjustments */
+    padding: 16px;
+    cursor: pointer;
+}
+
+/* Make the image fit its container */
+.recipe img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Heading and text styling */
+.recipe h3 {
+    margin: 16px 0;
+    font-size: 1.4em;
+    color: #444;
+}
+
+.recipe p {
+    padding: 0 16px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.recipe .instructions {
+    padding: 0 16px;
+    font-size: 0.9em;
+    color: #333;
+    margin-top: 8px;
+}
+
+/* Link styling */
+.recipe a {
+    display: inline-block;
+    margin: 8px 0;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.recipe a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+
+}
+
+/* Hover effect for recipe items */
+.recipe:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design: Adjust recipe item width for smaller screens */
+@media (max-width: 768px) {
+    .recipe {
+        width: calc(50% - 32px); /* 2 items per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .recipe {
+        width: calc(100% - 32px); /* 1 item per row on small screens */
+    }
+}
