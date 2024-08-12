@@ -8,7 +8,7 @@ document.getElementById("userForm").addEventListener("submit",async function(eve
     console.log("form submitted");  
   
   try{
-    const response=await fetch("http://localhost:5000/sign-in",
+    const response=await fetch("https://dharunrecipehub-server.vercel.app/sign-in",
       {
         method:"POST",
         mode:"cors",
