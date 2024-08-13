@@ -7,6 +7,11 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+     background-image: url(image/pngtree-asian-food-background-with-various-ingredients-on-rustic-stone-image_15700117.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    
   }
   
   .container {
