@@ -15,7 +15,7 @@ document.getElementById("userForm").addEventListener("submit",async function(eve
           console.log(val);
          
      if (response.ok) {
-        // Redirect to the cards page on successful registration
+        // Redirect to the cards page on successful registratio
         window.location.href = 'home.html'; 
       } else {
         // Handle error, for example, display an error message
