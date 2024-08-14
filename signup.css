@@ -41,7 +41,7 @@ body {
   
   input[type="text"],
   input[type="email"],
-  input[type="pass"],
+  input[type="password"],
   textarea {
     width: 100%;
     padding: 10px;
