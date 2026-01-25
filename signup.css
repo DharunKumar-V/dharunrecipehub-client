@@ -1,78 +1,183 @@
-body {
-    font-family: Arial, sans-serif;
-     background: rgb(249,83,72);
-     background: radial-gradient(circle, rgba(249,83,72,1) 0%, rgba(241,16,157,1) 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-     background-image: url(image/pngtree-asian-food-background-with-various-ingredients-on-rustic-stone-image_15700117.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; 
-    
-  }
-  
-  .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    max-width: 100%;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-bottom: 5px;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color:#f41f1f;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  .form-group input:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-  
-  button:hover {
-    background-color: black;
+/* ================= Body ================= */
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  /* background image */
+  background: url("image/pngtree-asian-food-background-with-various-ingredients-on-rustic-stone-image_15700117.jpg")
+    center/cover no-repeat;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* dark blur overlay for readability */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.35)
+  );
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+/* ================= Container (Glass Card) ================= */
+.container {
+  position: relative;
+  z-index: 1;
+
+  width: 420px;
+  max-width: 95%;
+
+  padding: 40px 32px;
+
+  border-radius: 22px;
+
+  /* glass look */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.35),
+    0 6px 20px rgba(0, 0, 0, 0.1);
+
+  animation: fadeIn 0.6s ease;
+}
+
+/* entry animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= Heading ================= */
+h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 28px;
+  color: #111827;
+}
+
+/* ================= Form ================= */
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* labels */
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+  color: #374151;
+}
+
+/* ================= Inputs ================= */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+
+  font-size: 0.95rem;
+
+  background: #ffffff;
+
+  transition: all 0.25s ease;
+}
+
+/* smooth modern focus */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #ff5e62;
+
+  box-shadow: 0 0 0 3px rgba(255, 94, 98, 0.25);
+  transform: translateY(-2px);
+}
+
+/* hover lift */
+.form-group input:hover,
+textarea:hover {
+  transform: translateY(-1px);
+}
+
+/* textarea */
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ================= Button ================= */
+button {
+  width: 100%;
+  margin-top: 10px;
+
+  padding: 12px;
+
+  border-radius: 999px;
+  border: none;
+
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  color: white;
+
+  background: linear-gradient(135deg, #ff5e62, #ff9966);
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+/* modern hover */
+button:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.1);
+  box-shadow: 0 8px 25px rgba(255, 94, 98, 0.45);
+}
+
+/* click feedback */
+button:active {
+  transform: scale(0.98);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 480px) {
+  .container {
+    padding: 28px 20px;
+  }
+}
   
