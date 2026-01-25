@@ -5,167 +5,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | RecipeHub</title>
     <link rel="icon" type="image/png" href="image/logo.png" >
-    <style>
-        body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
+       <style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* ================= Body ================= */
+body {
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 20px;
+
+  /* modern soft gradient bg */
+  background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff5e62);
+}
+
+/* ================= Container ================= */
 .contact-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
 }
 
-.contact-info, .contact-form {
-    flex: 1;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    box-sizing: border-box;
+/* ================= Glass Cards ================= */
+.contact-info,
+.contact-form {
+  background: rgba(255, 255, 255, 0.9);
+
+  border-radius: 22px;
+  padding: 40px;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.12);
+
+  transition: 0.3s ease;
 }
 
-.contact-info {
-    max-width: 400px;
+.contact-info:hover,
+.contact-form:hover {
+  transform: translateY(-5px);
 }
 
-.contact-info h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #ff6600;
-}
-
-.contact-info p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.contact-info .social-links {
-    margin-top: 20px;
-}
-
-.contact-info .social-links a {
-    text-decoration: none;
-    color: #333;
-    margin-right: 15px;
-    font-size: 1.5em;
-}
-
-.contact-info .social-links a:hover {
-    color: #ff6600;
-}
-
+/* ================= Headings ================= */
+.contact-info h2,
 .contact-form h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #ff6600;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  background: linear-gradient(135deg, #ff5e62, #ff9966);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* ================= Text ================= */
+.contact-info p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* ================= Social Icons ================= */
+.social-links {
+  margin-top: 18px;
+}
+
+.social-links a {
+  font-size: 1.4rem;
+  margin-right: 16px;
+  color: #555;
+  transition: 0.25s;
+}
+
+.social-links a:hover {
+  color: #ff5e62;
+  transform: scale(1.2);
+}
+
+/* ================= Form ================= */
 .contact-form form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.contact-form input, .contact-form textarea {
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-    width: 100%;
-    box-sizing: border-box;
+/* inputs */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  margin-bottom: 16px;
+
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+
+  font-size: 0.95rem;
+
+  transition: 0.25s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #ff5e62;
+  box-shadow: 0 0 0 3px rgba(255, 94, 98, 0.25);
+  transform: translateY(-2px);
 }
 
 .contact-form textarea {
-    height: 150px;
-    resize: vertical;
+  min-height: 130px;
+  resize: vertical;
 }
 
+/* ================= Button ================= */
 .contact-form button {
-    padding: 15px;
-    background: #ff6600;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1em;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  margin-top: 10px;
+
+  padding: 12px;
+
+  border-radius: 999px;
+  border: none;
+
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: white;
+
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ff5e62, #ff9966);
+  transition: 0.25s;
 }
 
 .contact-form button:hover {
-    background: #cc5200;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(255, 94, 98, 0.35);
 }
 
-/* Responsive styles */
+/* ================= Responsive ================= */
 @media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-        padding: 20px;
-    }
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
 
-    .contact-info, .contact-form {
-        max-width: none;
-        margin: 10px 0;
-    }
-
-    .contact-info h2, .contact-form h2 {
-        font-size: 1.8em;
-    }
-
-    .contact-info p {
-        font-size: 1em;
-    }
-
-    .contact-info .social-links a {
-        font-size: 1.2em;
-    }
-
-    .contact-form input, .contact-form textarea {
-        font-size: 0.9em;
-    }
-
-    .contact-form button {
-        font-size: 1em;
-    }
+  .contact-info,
+  .contact-form {
+    padding: 28px;
+  }
 }
-
-@media (max-width: 480px) {
-    .contact-info h2, .contact-form h2 {
-        font-size: 1.5em;
-    }
-
-    .contact-info p {
-        font-size: 0.9em;
-    }
-
-    .contact-info .social-links a {
-        font-size: 1em;
-    }
-
-    .contact-form input, .contact-form textarea {
-        font-size: 0.9em;
-    }
-
-    .contactForm button {
-        font-size: 0.9em;
-    }
-    
-}
-#contactForm :hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-    </style>
+</style>
 </head>
 <body>
     <div class="contact-container">
