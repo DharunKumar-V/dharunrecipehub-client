@@ -5,113 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | RecipeHub</title>
     <link rel="icon" type="image/png" href="image/logo.png" >
-    <style>
-        /* Base styles */
+ <style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= Body ================= */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* modern soft gradient */
+  background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff5e62);
 }
 
+/* ================= Layout ================= */
 .about-container {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    overflow: hidden; /* Prevent overflow on small screens */
+  width: 95%;
+  max-width: 1200px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-radius: 28px;
+  overflow: hidden;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
 }
 
+/* ================= Image Side ================= */
 .about-image {
-    flex: 1;
-    background: url('image/logo.png') no-repeat center center;
-    background-size: cover;
-    height: 100%;
+  position: relative;
+
+  background: url('image/logo.png') center/cover no-repeat;
+  min-height: 520px;
 }
 
+/* dark overlay for contrast */
+.about-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* ================= Text Side ================= */
 .about-text {
-    flex: 1;
-    padding: 20px;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+
+  backdrop-filter: blur(16px);
+
+  padding: 60px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+/* heading */
 h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #ff6600;
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  background: linear-gradient(135deg, #ff5e62, #ff9966);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+/* paragraph */
 p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 26px;
 }
 
+/* ================= Button ================= */
 .cta-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background: #ff6600;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 1.1em;
+  align-self: flex-start;
+
+  padding: 12px 26px;
+  border-radius: 999px;
+
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+
+  background: linear-gradient(135deg, #ff5e62, #ff9966);
+
+  transition: 0.25s ease;
 }
 
 .cta-button:hover {
-    background: #cc5200;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 94, 98, 0.35);
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        height: auto; /* Adjust height for stacked layout */
-    }
+/* ================= Responsive ================= */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
 
-    .about-image {
-        height: 50vh; /* Adjust image height for smaller screens */
-        background-size: contain; /* Ensure image fits well */
-    }
+  .about-image {
+    min-height: 300px;
+  }
 
-    .about-text {
-        padding: 20px;
-    }
+  .about-text {
+    padding: 36px 24px;
+  }
 
-    h1 {
-        font-size: 2em;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    p {
-        font-size: 1em;
-    }
-
-    .cta-button {
-        font-size: 1em;
-    }
+  p {
+    font-size: 0.95rem;
+  }
 }
-
-@media (max-width: 480px) {
-    .about-image {
-        height: 40vh;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
-
-    p {
-        font-size: 0.9em;
-    }
-
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-}
-
-    </style>
+</style>
 </head>
 <body>
     <section class="about-container">
